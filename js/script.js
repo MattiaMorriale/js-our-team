@@ -45,6 +45,6 @@ for (let i = 0; i < team.length; i++) {
         text += `${key}: ${team[i][key]}`
     }
 
-    listElement.innerHTML += `<li>${text}</li>`;
+    listElement.innerHTML += `<li class="list-group-item">${text}</li>`;
 
 }
