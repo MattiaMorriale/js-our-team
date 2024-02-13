@@ -36,4 +36,8 @@ const team = [
 
 for (let i = 0; i < team.length; i++) {
     console.log(team[i])
+
+    for (let key in(team[i])) {
+        console.log(`${key}: ${team[i][key]}`)
+    }
 }
