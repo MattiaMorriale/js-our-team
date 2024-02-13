@@ -1,6 +1,4 @@
-
-const cardCont = document.querySelector('.card-cont')
-const cardText = document.querySelector('.card-text')
+const containerCards = document.querySelector('#cardsContainer');
 
 const team = [
 {
@@ -8,7 +6,6 @@ const team = [
     ruolo: "Founder & CEO",
     foto: "wayne-barnett-founder-ceo.jpg",
 },
-
 {
     nome: "Angela Caroll",
     ruolo: "Chief Editor",
@@ -47,8 +44,6 @@ for (let i = 0; i < team.length; i++) {
 
         console.log(`${key}: ${team[i][key]}`)
 
-        
-        
         if (key == 'foto') {
             
             img += `<img class="img-fluid" src="img/${team[i][key]}" >`;
@@ -56,14 +51,20 @@ for (let i = 0; i < team.length; i++) {
             
         } else {
 
-            text += `${key}: ${team[i][key]}<br>`;
+            text += `<p>${team[i][key]}<br></p>`;
             
         }
-        
-        cardText.innerHTML += `<p class="list-group-item">${text}</p>`;
-    
-        cardCont.innerHTML += `${img}`;
+
     }
-
-
+    
+    containerCards.innerHTML += 
+    `<div class="col-12 col-md-5 col-lg-3 d-flex justify-content-center flex-column mx-2 mb-4 ">
+        ${img}
+        <div>
+            <div class="text-center p-3  my-cardtext">
+                ${text}
+            </div>
+        </div>
+    </div>`
+    
 }
