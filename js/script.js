@@ -1,4 +1,6 @@
-const listElement = document.querySelector('ul');
+
+const cardCont = document.querySelector('.card-cont')
+const cardText = document.querySelector('.card-text')
 
 const team = [
 {
@@ -10,7 +12,7 @@ const team = [
 {
     nome: "Angela Caroll",
     ruolo: "Chief Editor",
-    foto: "walter-gordon-office-manager.jpg",
+    foto: "angela-caroll-chief-editor.jpg",
 },
 {
     nome: "Walter Gordon",
@@ -39,12 +41,29 @@ for (let i = 0; i < team.length; i++) {
 
     let text = "";
 
+    let img = "";
+
     for (let key in(team[i])) {
+
         console.log(`${key}: ${team[i][key]}`)
 
-        text += `${key}: ${team[i][key]}`
+        
+        
+        if (key == 'foto') {
+            
+            img += `<img class="img-fluid" src="img/${team[i][key]}" >`;
+            
+            
+        } else {
+
+            text += `${key}: ${team[i][key]}<br>`;
+            
+        }
+        
+        cardText.innerHTML += `<p class="list-group-item">${text}</p>`;
+    
+        cardCont.innerHTML += `${img}`;
     }
 
-    listElement.innerHTML += `<li class="list-group-item">${text}</li>`;
 
 }
