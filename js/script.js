@@ -62,7 +62,7 @@ for (let i = 0; i < team.length; i++) {
         ${img}
         <div>
             <div class="text-center p-3  my-cardtext">
-                ${text}
+                ${text} 
             </div>
         </div>
     </div>`
