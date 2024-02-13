@@ -1,3 +1,5 @@
+const listElement = document.querySelector('ul');
+
 const team = [
 {
     nome: "Wayne Barnett",
@@ -32,12 +34,17 @@ const team = [
 }
 ];
 
-
-
 for (let i = 0; i < team.length; i++) {
     console.log(team[i])
 
+    let text = "";
+
     for (let key in(team[i])) {
         console.log(`${key}: ${team[i][key]}`)
+
+        text += `${key}: ${team[i][key]}`
     }
+
+    listElement.innerHTML += `<li>${text}</li>`;
+
 }
